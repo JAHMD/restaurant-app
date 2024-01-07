@@ -14,7 +14,7 @@ export function getMealPosition(id: number, position: "next" | "prev") {
   return endpoint.get("/meals/" + id + "/" + position);
 }
 
-export function getSearchMeals(searchInput) {
+export function getSearchMeals(searchInput: string) {
   return getMeals({
     name: searchInput,
   });

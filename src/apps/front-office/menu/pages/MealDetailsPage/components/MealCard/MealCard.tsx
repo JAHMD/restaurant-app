@@ -18,7 +18,7 @@ export default function MealCard({ meal }: MealCardProps) {
   const { addMealToCart } = useCart();
 
   return (
-    <div className="p-3 group rounded-[2rem] border relative">
+    <div className="p-3 group rounded-[2rem] border relative bg-white">
       <MealCardFavorite meal={meal} />
       <Link
         to={URLS.menu.viewMeal(meal)}
@@ -43,15 +43,17 @@ export default function MealCard({ meal }: MealCardProps) {
           {meal.description}
         </p>
         <div className="flex items-center justify-between gap-4">
-          <div className="flex gap-2">
+          <div className="flex gap-2 font-bold text-lg">
             {displayedSale && (
-              <span className="inline-block text-secondary">
+              <span className="inline-block text-primary-main">
                 {displayedSale}
               </span>
             )}
             <span
-              className={`inline-block  ${
-                displayedSale ? "text-black line-through" : "text-primary-main"
+              className={`inline-block font-medium  ${
+                displayedSale
+                  ? "text-gray-400 line-through"
+                  : "text-primary-main"
               }`}>
               {displayedPrice}
             </span>

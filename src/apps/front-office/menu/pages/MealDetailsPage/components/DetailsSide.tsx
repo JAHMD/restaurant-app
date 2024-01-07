@@ -36,15 +36,17 @@ export const DetailsSide = () => {
           <h1 className="text-5xl font-bold">{meal.name}</h1>
           <Stars ratings={ratings} />
           <p className="text-primary-text text-base">{meal.description}</p>
-          <div className="flex gap-4 text-2xl font-bold">
+          <div className="flex gap-4 font-bold text-2xl sm:text-3xl">
             {displayedSale && (
-              <span className="inline-block text-secondary">
+              <span className="inline-block text-primary-main">
                 {displayedSale}
               </span>
             )}
             <span
-              className={`inline-block  ${
-                displayedSale ? "text-black line-through" : "text-primary-main"
+              className={`inline-block font-medium  ${
+                displayedSale
+                  ? "text-gray-400 line-through"
+                  : "text-primary-main"
               }`}>
               {displayedPrice}
             </span>
